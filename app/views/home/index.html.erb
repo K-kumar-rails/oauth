@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CompCore Workers Comp Management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="features.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="pricing.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="contact.css" type="text/css" media="screen" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body class="pull_top">
+    <div class="navbar transparent navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="index.html">
+                <strong>CompCore</strong>
+            </a>
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    <li><a href="<%= root_path %>" class="active">HOME</a></li>
+                    <li><a href="#">FEATURES</a></li>
+                    <li><a href="#">PRICING</a></li>
+                    <li><a href="#">CONTACT US</a></li>
+                    <li><a href="#">CASE STUDY</a></li>
+                    <li><a href="<%= blog_pages_path %>">BLOG</a></li>
+                    <% unless current_user %> 
+                      <li><a class="btn-header" href="<%= new_user_registration_path %>">Sign up</a></li>
+                      <li><a class="btn-header" href="<%= user_session_path %>">Sign in</a></li>
+                    <% else %>
+                      <li><%= link_to('Signout', destroy_user_session_path, :method => :delete, :class => "btn-header") %></li> 
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="feature_slider" class="">
+        <!-- 
+            Each slide is composed by <img> and .info
+            - .info's position is customized with css in index.css
+            - each <img> parallax effect is declared by the following params inside its class:
+            
+            example: class="asset left-472 sp1600 t120 z3"
+            left-472 means left: -472px from the center
+            sp1600 is speed transition
+            t120 is top to 120px
+            z3 is z-index to 3
+            Note: Maintain this order of params
+
+            For the backgrounds, you can combine from the bgs folder :D
+        -->
+        <article class="slide" id="showcasing" style="background: url('/assets/backgrounds/indigo.jpg') repeat-x top center;">
+            <img class="asset left-30 sp2600 t120 z1" src="/assets/slides/scene1/macbook.png" />
+            <div class="info">
+                <h2>Lower Work Comp Costs by up to 150% in The First Year</h2>
+            </div>
+        </article>
+        <article class="slide" id="ideas" style="background: url('/assets/backgrounds/aqua.jpg') repeat-x top center;">
+            <div class="info">
+                <h2>Collaborate With Managers to Get Employees Back to Work Faster</h2>
+            </div>
+            <img class="asset left-480 sp2600 t260 z1" src="/assets/left.png" />
+            <img class="asset left-210 sp2600 t213 z2" src="/assets/middle.png" />
+            <img class="asset left60 sp2600 t260 z1" src="/assets/right.png" />
+        </article>
+        <article class="slide" id="tour" style="background: url('/assets/backgrounds/deep-green.jpg') repeat-x top center;">
+            <img class="asset left-472 sp2650 t210 z3" src="/assets/slides/scene3/ipad.png" />
+            <img class="asset left-365 sp2600 t270 z4" src="/assets/slides/scene3/iphone.png" />
+            <img class="asset left-350 sp2450 t135 z2" src="/assets/slides/scene3/desktop.png" />
+            <img class="asset left-185 sp2550 t220 z1" src="/assets/slides/scene3/macbook.png" />
+            <div class="info">
+                <h2>Compatible On All Devices</h2>
+                <a href="features.html">SETUP A FREE ACCOUNT</a>
+            </div>
+        </article>       
+    </section>
+
+    <div id="features">
+        <div class="container">
+            <div class="section_header">
+                <h3></h3>
+            </div> 
+
+    <div class="row subtitle">
+                    <h2>
+                        Take the pain and confusion out of managing your workers compensation injuries. From one location, your team can collaborate to control injuries and save your company money.
+                    </h2>
+                </div>
+
+            <div class="row feature">
+                <div class="span6">
+                    <img src="/assets/showcase1.png" />
+                </div>
+                <div class="span6 info">
+                    <h3>
+                       <img src="/assets/features-ico4.png" />
+                        Injury Management and Tracking
+                    </h3>
+                    <p>
+                        Easily tracking injuries by job sites, clients, and/or company branch offices. Say goodbye to the endless mounds of paperwork, injury files and bills. Everything is at your finger tips from one digital employee file. Managers can update injuries from anywhere when the rumors start flying about a fraudulent injury. CompCore turns every manger into a safety manger, making your life easier.
+                    </p>
+                </div>
+            </div>
+            <div class="row feature ss">
+                <div class="span6 info">
+                    <h3>
+                        <img src="/assets/features-ico6.png" />
+                        Bill Tracking and Payment
+                    </h3>
+                    <p>
+                        Medical providers, Attorneys, and another service provider can submit bills directly into the injured employees file within CompCore. This lets you track every penny per claim so you can see with one click every cost. Your TPA or Insurance claims adjuster can access the employee file to pull bills for bill rearview and/or make notes about a claim. By staying in the loop on where your money is going, keeps people honest and more money in your pocket.  
+                    </p>
+                </div>
+                <div class="span6">
+                    <img src="/assets/showcase2.png" class="pull-right" />
+                </div>
+            </div>
+
+            <div class="row feature ss">
+                <div class="span6">
+                    <img src="/assets/showcase3.png" />
+                </div>
+                <div class="span6 info">
+                    <h3>
+                        <img src="/assets/features-ico3.png" />
+                        Easy Reporting & Claim tracking
+                    </h3>
+                    <p>
+                        From the main dashboard see how many claims are open and how old. View recent updates by team members and claim adjusters. Easily run year end OSAH 300 logs with one click, or see if certain clients or job sites are having too many injury and your losing money. Track employee follow up appointments and coordinate with doctors to get employees released to full duty faster.</p>
+                </div>
+             </div>
+
+  <div class="row feature ss">
+                <div class="span6 info">
+                    <h3>
+                        <img src="/assets/features-ico2.png" />
+                        Collaborate with everyone!
+                    </h3>
+                    <p>
+                        Finally a tool that lets safety managers, branch managers, supervisors, medical providers and insurance claim adjusters stay in constant contact to better manage claims and lower costs. Medical providers can submit status reports electronically to the injury profile and your team can add/review notes at any time. Letting everyone on your team stay up to date with the most current information without ever having a piece of paper cross your desk.
+                    </p>
+                </div>
+                <div class="span6">
+                    <img src="/assets/showcase2.png" class="pull-right" />
+                </div>
+            </div>
+  
+  <div class="row feature ss">
+                <div class="span6">
+                    <img src="/assets/showcase3.png" />
+                </div>
+                <div class="span6 info">
+                    <h3>
+                        <img src="/assets/features-ico7.png" />
+                        Set Alerts
+                    </h3>
+                    <p>
+                        Set alerts to notify you when a claim needs special attention. We can alert you if a claim is showing signs of red-flags, if light duty has not been offered, if a claim is open for a longer then normal amount of time, if the accident investigation has need been completed or if a manager gets new information on an injury and updates a profile. Want custom alerts? We can do that to. You tell us what you want to see and we will create custom alerts for you and your team. 
+                    </p>
+                </div>
+             </div>
+           <div>
+        </div>
+    </div>
+
+
+    <!-- Pricing Option -->
+    <div id="in_pricing">
+    <div id="in_pricing2">
+        <div class="container">
+            <div class="head">
+                <h3>CompCore Is Free To Get Started!</h3>
+                <h6>If you need to upgrade later, we have affordable plans to fit every size company</h6>
+            </div>
+
+            <div class="row charts_wrapp">
+                <!-- Plan Box -->
+                <div class="span3">
+                    <div class="plan">
+                        <div class="wrapper">
+                            <h3>Free</h3>
+                            <div class="price">
+                                <span class="dollar">$</span> 
+                                <span class="qty">0</span> 
+                                <span class="month">/mo</span>
+                            </div>
+                            <div class="features">
+                                <p>
+                                    <strong>50</strong>
+                                    Injuries
+                                </p>
+                                <p>
+                                    <strong>2</strong>
+                                    Users
+                                </p>
+                                <p>
+                                    <strong>2</strong>
+                                    Locations
+                                </p>
+                            </div>
+                            <a class="order" href="#">SIGNUP NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plan Box -->
+                <div class="span3 ultra">
+                    <div class="plan">
+                        <div class="wrapper">
+                            <img class="ribbon" src="/assets/badge.png">
+                            <h3>Plus</h3>
+                            <div class="price">
+                                <span class="dollar">$</span> 
+                                <span class="qty">297</span> 
+                                <span class="month">/mo</span>
+                            </div>
+                            <div class="features">
+                                <p>
+                                    <strong>250</strong>
+                                    Injuries
+                                </p>
+                                <p>
+                                    <strong>10</strong>
+                                    Users
+                                </p>
+                                <p>
+                                    <strong>5</strong>
+                                     Locations
+                                </p>
+                                <p>
+                                    <strong>Plus </strong>
+                                    Phone Support
+                                </p>
+                            </div>
+                            <a class="order" href="#">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plan Box -->
+                <div class="span3">
+                    <div class="plan">
+                        <div class="wrapper">
+                            <h3>Ultra</h3>
+                            <div class="price">
+                                <span class="dollar">$</span> 
+                                <span class="qty">397</span> 
+                                <span class="month">/mo</span>
+                            </div>
+                            <div class="features">
+                                <p>
+                                    <strong>500</strong>
+                                    Injuries
+                                </p>
+                                <p>
+                                    <strong>25</strong>
+                                    Users
+                                </p>
+                                <p>
+                                    <strong>10</strong>
+                                    Locations
+                                </p>
+                            </div>
+                            <a class="order" href="#">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Plan Box -->
+                <div class="span3 black">
+                    <div class="plan">
+                        <div class="wrapper">
+                            <h3>Need more?</h3>
+                            <h6>Let’s talk.</h6>
+                            <p>If your company needs are larger than any of our plans, let’s talk.</p>
+                            <a class="order" href="#">GET IN TOUCH</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+             <!-- FAQs -->
+    <div id="faq">
+        <div class="container">
+            <div class="section_header">
+                <h3>Frequently asked questions</h3>
+            </div>
+
+            <div class="row">
+                <div class="span6 block">
+                    <div class="box">
+                        <p class="title">How long are your contracts?</p>
+                        <p class="answ">
+                            With CompCore there's NO contract to lock you in. If you feel our service is not up to your standards or not saving your company money like advertised, you can cancel at any time.</p>
+                    </div>
+                    <div class="box">
+                        <p class="title">How do i sign up?</p>
+                        <p class="answ">
+                            To sign up, simply click on any of the Sign Up Now buttons scattered around the site. You can sign u in just seconds and get stared adding your first injury in minuets.</p>
+                    </div>
+                </div>
+
+                <div class="span6 block">
+                    <div class="box">
+                        <p class="title">What's the catch with the free account?</p>
+                        <p class="answ">
+                            We make our platform available to any size company. You can fully use our platform for free up to 50 injuries. If at that point you want to keep using us, you can upgrade. We want you to love us before commiting to us.</p>
+                    </div>
+                    <div class="box">
+                        <p class="title">Is there a discount for yearly service?</p>
+                        <p class="answ">
+                            Yes, when you make an annual payment you get 2 months free. Our goal is to not only be affordable but lower work comp costs from the first week of use. Most clients say our platform paid for it self in the first 2 months of use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="section_header">
+                <h3>Get in touch</h3>
+            </div>
+            <div class="row contact">
+                <p>
+                    Still have questions or want to talk to a real person? Fill out the form below and we will get back to you as soon a possible. Please allow up to 24 hours for us to respond.</p>
+
+                <form>
+                    <div class="row form">
+                        <div class="span6 box">
+                            <input class="name" type="text" placeholder="Name">
+                            <input class="mail" type="text" placeholder="Email">
+                            <input class="phone" type="text" placeholder="Phone">
+                        </div>
+                        <div class="span6 box box_r">
+                            <textarea placeholder="Type a message here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row submit">
+                        <div class="span5 box">
+                            <label class="checkbox">
+                                <input type="checkbox"> Sign up for newsletter
+                            </label>
+                        </div>
+                        <div class="span3 right">
+                            <input type="submit" value="Send your message">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row map">
+            <div class="container">
+                <div class="span5 box_wrapp">
+                    <div class="box_cont">
+                        <div class="head">
+                            <h6>Contact</h6>
+                        </div>
+                        <ul class="street">
+                            <li></li>
+                            <li>Burr Ridge IL, 60527</li>
+                            <li></li>
+                            <li class="icon icontop">
+                                <span class="contacticos ico1"></span>
+                                <span class="text">1 630-791-0243</span>
+                            </li>
+                            <li class="icon">
+                                <span class="contacticos ico2"></span>
+                                <a class="text" href="#">info@compcore.com</a>
+                            </li>
+                        </ul>
+
+                        <div class="head headbottom">
+                            <h6>Work with us</h6>
+                        </div>
+                        <p>What to integrate your software with CompCore? Speak with one of our partnership coordinators today.</p>
+
+                        <a href="#" class="btn">Let's get started</a>
+                    </div>
+                </div>
+            </div>
+            <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.mx/?ie=UTF8&amp;ll=64.089157,-21.816616&amp;spn=0.045157,0.15398&amp;t=m&amp;z=13&amp;output=embed"></iframe>
+        </div>
+    </div>
+
+
+
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/theme.js"></script>
+
+    <script type="text/javascript" src="js/index-slider.js"></script> 
+</body>
+</html>

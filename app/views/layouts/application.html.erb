@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oauth</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Styles -->
+    <link href="/assets/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap-overrides.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/theme.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="/assets/lib/animate.css" media="screen, projection">
+    <link rel="stylesheet" href="/assets/sign-in.css" type="text/css" media="screen" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% unless params[:controller] == 'home' %>
+      <%= render :partial => 'layouts/header' %>
+    <% end %>
+    <%= yield %>
+    <%= render :partial => 'layouts/footer' %>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/assets/bootstrap.min.js"></script>
+    <script src="/assets/theme.js"></script>
+  </body>
+</html>
